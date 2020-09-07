@@ -1,0 +1,382 @@
+@import "./assets/_fonts.scss";
+@import "assets/_normalize.scss";
+
+$black: #232323;
+$background: #ffdf8c;
+$gray-line: #f6f6f6;
+$orange: #fe5f1e;
+
+body {
+  background-color: $background;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.btn {
+  padding: 15px 20px;
+  outline: none;
+  border: none;
+  background: none;
+  border-radius: 30px;
+  cursor: pointer;
+
+  &_cart {
+    min-width: 150px;
+    min-height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    color: #FFFFFF;
+    background: $orange;
+  }
+
+  &_black {
+    color: #FFFFFF;
+    background: $black;
+  }
+
+  &_terminate {
+    width: 1px;
+    height: 25px;
+    left: 1276px;
+    top: 107px;
+
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  &_addCart {
+    padding: 11px 17px;
+    min-width: 132px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: $orange;
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #FFFFFF;
+
+    span {
+      margin: 0 7px;
+    }
+
+    svg {
+      fill: #FFFFFF;}
+
+    &_active {
+      color: $orange;
+      border: 1px $orange solid;
+      background: transparent;
+
+      i {
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        color: #FFFFFF;
+        background: $orange;
+      }
+
+      svg {fill: $orange;}
+    }
+
+  }
+
+}
+
+.wrapper {
+  margin: 50px auto;
+  width: calc(100vw - 100px);
+  max-width: 1400px;
+  height: 100%;
+  min-height: 980px;
+  background: #FFFFFF;
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+}
+
+.container {
+  padding: 0 50px;
+}
+
+.header {
+  padding: 40px 0;
+  width: 100%;
+  border-bottom: 1px solid $gray-line;
+
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      margin: 14px;
+    }
+  }
+
+  &_title {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+
+    color: #181818;
+  }
+
+  &_subtitle {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #7B7B7B;
+  }
+}
+
+.nav {
+  width: 100%;
+
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.category {
+
+  ul {
+    display: flex;
+
+    li {
+      margin-right: 9px;
+      background: #F9F9F9;
+
+      &:hover {
+        color: #FFFFFF;
+        background: $black;
+      }
+
+    }
+
+    ._active {
+      color: #FFFFFF;
+      background: $black;
+    }
+  }
+}
+
+.sort {
+  padding: 40px 0;
+  position: relative;
+
+  &_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  svg {
+    margin-right: 8px;
+  }
+
+  b {
+    margin-right: 8px;
+  }
+
+  span {
+    color: $orange;
+    border-bottom: 1px dashed #FE5F1E;
+    cursor: pointer;
+  }
+
+  &_menu {
+    padding: 13px 0;
+    margin-top: 10px;
+    position: absolute;
+    right: 0;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
+    border-radius: 10px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+
+      li {
+        padding: 10px 14px;
+        font-family: Proxima Nova;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+
+        letter-spacing: 0.015em;
+        cursor: pointer;
+
+        &active,
+        &:hover {
+          color: $orange;
+          background: rgba(254, 95, 30, 0.05);
+        }
+      }
+    }
+  }
+}
+
+.pizza_block {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+
+  &_title {
+    font-family: Proxima Nova;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+
+    letter-spacing: 0.01em;
+    color: #000000;
+
+  }
+}
+
+.pizza_item {
+  margin: 35px auto;
+  text-align: center;
+  width: 280px;
+
+  img {
+    width: 260px;
+  }
+
+  &_settings {
+    padding: 0 5px 7px;
+    background: #F3F3F3;
+    border-radius: 10px;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      li {
+        margin-top: 7px;
+        width: 100%;
+        padding: 10px 0;
+        font-family: Proxima Nova;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        letter-spacing: 0.015em;
+
+        color: #2C2C2C;
+        cursor: pointer;
+      }
+
+      ._active {
+        background: #FFFFFF;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+        border-radius: 5px;
+      }
+    }
+  }
+
+  &_footer {
+    margin-top: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    b {
+      font-family: Proxima Nova;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 27px;
+
+      letter-spacing: 0.015em;
+
+      color: #000000;
+    }
+
+    span {
+
+
+    }
+  }
+}
+
+.cart {
+
+  &_empty {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      margin-bottom: 10px;
+      font-family: Proxima Nova;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 32px;
+      line-height: 39px;
+      /* identical to box height */
+
+      letter-spacing: 0.01em;
+
+      color: #000000;
+    }
+
+    p {
+      margin-bottom: 47px;
+      font-family: Proxima Nova;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 145.4%;
+      /* or 26px */
+
+      text-align: center;
+      letter-spacing: 0.01em;
+
+      color: #777777;
+    }
+
+    img {
+      width: 283px;
+      height: 240px;
+    }
+
+    a {
+      margin-top: 75px;
+    }
+  }
+}
