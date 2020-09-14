@@ -3,6 +3,7 @@ import logo from "../assets/img/pizza-logo.svg";
 import {withRouter, NavLink} from "react-router-dom";
 
 const Header = (props) => {
+    //Вынести в контейнерную компоненту логику и взаимодествие со state
     return(
         <header className="header">
             <div className="container">

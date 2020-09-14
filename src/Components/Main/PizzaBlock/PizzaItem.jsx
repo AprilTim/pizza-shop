@@ -2,24 +2,28 @@ import React from "react";
 
 
 const PizzaItem = (props) => {
+
+    let {small,middle,big} = props.sizeRange
+
     return (
-        <div className="pizza_item"><img
+        <div className="pizza_item">
+            <img
             src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"/>
-            <h3>{props.name}</h3>
+            <h3>{props.pizza.name}</h3>
             <div className="pizza_item_settings">
                 <ul>
-                    <li className="_active">Тонкое</li>
-                    <li>Традиционное</li>
+                    <li onClick={() => props.setTypeDough(props.pizza.name,false)} className={`${!props.pizza.typeDough && "_active"}`}>Тонкое</li>
+                    <li onClick={() => props.setTypeDough(props.pizza.name,true)} className={`${props.pizza.typeDough && "_active"}`}>Традиционное</li>
                 </ul>
                 <ul>
-                    <li className="_active">26 см.</li>
-                    <li>30 см.</li>
-                    <li>40 см.</li>
+                    <li onClick={() => props.setSize(props.pizza.name,small)} className={`${(props.pizza.size == small) && "_active"}`}>{small} см.</li>
+                    <li onClick={() => props.setSize(props.pizza.name,middle)} className={`${(props.pizza.size == middle) && "_active"}`}>{middle} см.</li>
+                    <li onClick={() => props.setSize(props.pizza.name,big)} className={`${(props.pizza.size == big) && "_active"}`}>{big} см.</li>
                 </ul>
             </div>
             <div className="pizza_item_footer">
-                <b className="pizza_footer_price">от 395 Р</b>
-                <div className="btn btn_addCart">
+                <b className="pizza_footer_price">от {props.pizza.price} Р</b>
+                <button onClick={() => props.addToCart(props.pizza)} className="btn btn_addCart">
                     <svg
                         width="12"
                         height="12"
@@ -34,7 +38,7 @@ const PizzaItem = (props) => {
                     </svg>
                     <span>Добавить</span>
                     <i>2</i>
-                </div>
+                </button>
             </div>
         </div>
     )

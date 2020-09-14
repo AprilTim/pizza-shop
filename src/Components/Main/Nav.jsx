@@ -3,13 +3,12 @@ import connect from "react-redux/lib/connect/connect";
 
 
 const Nav = (props) => {
-
-    let [category,setCategory] = useState(0)
+    /*let [category,setCategory] = useState(0)*/
     let [editSort,setEditSort] = useState(false)
 
     const getCategory = props.main.categories.map((item, index) => {
-        return (<li key={item} onClick={() => setCategory(index)}
-                    className={`${(index == category) && "_active"} btn`}>{item}</li>)})
+        return (<li key={item} onClick={() => props.setCategory(item)}
+                    className={`${(props.main.selectedCategory == item) && "_active"} btn`}>{item}</li>)})
 
     return(
             <nav className="nav">
@@ -53,8 +52,4 @@ const Nav = (props) => {
     )
 }
 
-let mapStateToProps = (state) => ({
-    main: state.main,
-})
-
-export default connect(mapStateToProps,null)(Nav);
+export default Nav;
